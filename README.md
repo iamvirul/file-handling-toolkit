@@ -1,4 +1,3 @@
-```markdown
 # File Handling Toolkit
 
 File Handling Toolkit is a Node.js package that provides utility functions for handling files, including reading and writing text files.
@@ -18,7 +17,6 @@ npm install file-handling-toolkit
 ```javascript
 const { readFile } = require('file-handling-toolkit');
 
-// Example: Read a text file
 readFile('example.txt')
   .then(data => {
     console.log('File content:', data);
@@ -33,7 +31,7 @@ readFile('example.txt')
 ```javascript
 const { writeFile } = require('file-handling-toolkit');
 
-// Example: Write data to a text file
+
 const data = 'Hello, world!';
 writeFile('output.txt', data)
   .then(() => {
