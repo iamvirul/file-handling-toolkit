@@ -1,5 +1,3 @@
-Got it! Here's the updated README file with the correct package name:
-
 ```markdown
 # File Handling Toolkit
 
