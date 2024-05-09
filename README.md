@@ -60,4 +60,3 @@ Writes data to a file and returns a Promise that resolves when the operation com
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
