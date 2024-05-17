@@ -1,6 +1,6 @@
 # File Handling Toolkit
 
-File Handling Toolkit is a Node.js package that provides utility functions for handling files, including reading and writing text files.
+File Handling Toolkit is a Node.js package that provides utility functions for handling files, including reading and writing text files, as well as reading CSV files and converting them to arrays of objects.
 
 ## Installation
 
@@ -31,7 +31,6 @@ readFile('example.txt')
 ```javascript
 const { writeFile } = require('file-handling-toolkit');
 
-
 const data = 'Hello, world!';
 writeFile('output.txt', data)
   .then(() => {
@@ -39,6 +38,20 @@ writeFile('output.txt', data)
   })
   .catch(error => {
     console.error('Error writing to file:', error);
+  });
+```
+
+### Read a CSV File
+
+```javascript
+const { readCsvToArray } = require('file-handling-toolkit');
+
+readCsvToArray('example.csv')
+  .then(data => {
+    console.log('CSV Data:', data);
+  })
+  .catch(error => {
+    console.error('Error reading CSV file:', error);
   });
 ```
 
@@ -57,6 +70,20 @@ Writes data to a file and returns a Promise that resolves when the operation com
 - `filePath`: Path to the file to write.
 - `data`: Data to be written to the file.
 
+### `readCsvToArray(filePath: string): Promise<object[]>`
+
+Reads a CSV file and returns a Promise that resolves with the content of the CSV file as an array of objects.
+
+- `filePath`: Path to the CSV file to be read.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+### Explanation:
+
+1. **Added CSV Reading Feature**: Included an example usage for reading a CSV file and converting it to an array of objects.
+2. **API Reference**: Added a new section for the `readCsvToArray` function in the API reference, detailing its usage and parameters.
+
+This updated `README.md` provides clear instructions and examples for users on how to use the new CSV reading feature along with the existing file read and write features.
