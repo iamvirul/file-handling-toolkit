@@ -1,8 +1,6 @@
-// __tests__/fileHandling.test.js
 const path = require('path');
 const { readFile, writeFile } = require('file-handling-toolkit');
 
-// Mock data for testing
 const exampleFilePath = path.resolve(__dirname, 'mockFiles','example.txt');
 const exampleFileOutPath = path.resolve(__dirname, 'mockFiles','testOutput.txt');
 const exampleData = 'Hello, world!';
