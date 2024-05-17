@@ -1,9 +1,10 @@
 // __tests__/fileHandling.test.js
-
+const path = require('path');
 const { readFile, writeFile } = require('file-handling-toolkit');
 
 // Mock data for testing
-const exampleFilePath = 'example.txt';
+const exampleFilePath = path.resolve(__dirname, 'mockFiles','example.txt');
+const exampleFileOutPath = path.resolve(__dirname, 'mockFiles','testOutput.txt');
 const exampleData = 'Hello, world!';
 
 
@@ -14,8 +15,8 @@ describe('File Handling Toolkit', () => {
     });
 
     test('writeFile should write data to a file', async () => {
-        await writeFile('testOutput.txt', exampleData);
-        const data = await readFile('testOutput.txt');
+        await writeFile(exampleFileOutPath, exampleData);
+        const data = await readFile(exampleFileOutPath);
         expect(data).toEqual(exampleData);
     });
 });
