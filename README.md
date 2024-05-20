@@ -41,6 +41,21 @@ writeFile('output.txt', data)
   });
 ```
 
+### Append to a File
+
+```javascript
+const { writeFile } = require('file-handling-toolkit');
+
+const data = 'Appending this text.';
+writeFile('output.txt', data, true)
+  .then(() => {
+    console.log('Data appended to file successfully!');
+  })
+  .catch(error => {
+    console.error('Error appending to file:', error);
+  });
+```
+
 ### Read a CSV File
 
 ```javascript
@@ -63,12 +78,13 @@ Reads the contents of a file and returns a Promise that resolves with the file c
 
 - `filePath`: Path to the file to be read.
 
-### `writeFile(filePath: string, data: string): Promise<void>`
+### `writeFile(filePath: string, data: string, append?: boolean): Promise<void>`
 
 Writes data to a file and returns a Promise that resolves when the operation completes successfully.
 
 - `filePath`: Path to the file to write.
 - `data`: Data to be written to the file.
+- `append` (optional): If `true`, appends data to the file instead of overwriting it. Defaults to `false`.
 
 ### `readCsvToArray(filePath: string): Promise<object[]>`
 
@@ -80,10 +96,11 @@ Reads a CSV file and returns a Promise that resolves with the content of the CSV
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
 
 ### Explanation:
 
-1. **Added CSV Reading Feature**: Included an example usage for reading a CSV file and converting it to an array of objects.
-2. **API Reference**: Added a new section for the `readCsvToArray` function in the API reference, detailing its usage and parameters.
+1. **Append to a File Feature**: Added an example usage for appending data to an existing file.
+2. **API Reference Update**: Updated the `writeFile` function in the API reference to include the new optional `append` parameter.
 
-This updated `README.md` provides clear instructions and examples for users on how to use the new CSV reading feature along with the existing file read and write features.
+This updated `README.md` provides clear instructions and examples for users on how to use the new appending feature along with the existing file read, write, and CSV read features.
