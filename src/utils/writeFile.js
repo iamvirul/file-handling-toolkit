@@ -1,8 +1,9 @@
 const fs = require('fs');
 
-function writeFile(filePath, data) {
+function writeFile(filePath, data, append = false) {
     return new Promise((resolve, reject) => {
-        fs.writeFile(filePath, data, 'utf8', (err) => {
+        const writeMode = append ? 'a' : 'w';
+        fs.writeFile(filePath, data, { encoding: 'utf8', flag: writeMode }, (err) => {
             if (err) {
                 reject(err);
             } else {
